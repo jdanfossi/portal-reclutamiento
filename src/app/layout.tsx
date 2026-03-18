@@ -15,6 +15,8 @@ export const metadata: Metadata = {
   description: "Buscamos a los mejores profesionales",
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function RootLayout({
   children,
 }: Readonly<{
