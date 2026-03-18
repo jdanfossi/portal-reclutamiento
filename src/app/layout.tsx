@@ -47,7 +47,7 @@ export default async function RootLayout({
                          Mi Dashboard
                        </Link>
                      ) : (session.user as any)?.userRole === "admin" ? (
-                       <Link href="/admin/dashboard" className="text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors">
+                       <Link href="/admin/vacantes" className="text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors">
                          Panel Admin
                        </Link>
                      ) : null}
@@ -70,7 +70,7 @@ export default async function RootLayout({
                      Iniciar Sesión
                    </Link>
                  )}
-              </div>
+               </div>
             </div>
           </div>
         </header>
