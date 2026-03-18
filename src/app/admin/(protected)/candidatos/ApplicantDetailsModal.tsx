@@ -153,7 +153,7 @@ export default function ApplicantDetailsModal({
             
             {/* INICIO MODAL CONFIRMACION ESTADO */}
             {pendingStatusChange && (
-              <div className="absolute inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 rounded-lg">
+              <div className="absolute inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 rounded-lg whitespace-normal text-left">
                 <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 border border-slate-200">
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Confirmar acción</h3>
                   <p className="text-slate-600 mb-6 text-sm">
