@@ -18,8 +18,30 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
        return NextResponse.json({ error: "ID inválido" }, { status: 400 });
     }
 
-    // Fetch application details for narrative fields
-    const postulacionesRows = await db.select().from(postulaciones).where(eq(postulaciones.id, postId)).limit(1);
+    // Fetch application details with candidate info via join
+    const postulacionesRows = await db
+      .select({
+        id: postulaciones.id,
+        candidato_id: postulaciones.candidato_id,
+        vacante_id: postulaciones.vacante_id,
+        estado_postulacion: postulaciones.estado_postulacion,
+        disponibilidad: postulaciones.disponibilidad,
+        experiencia_laboral: postulaciones.experiencia_laboral,
+        estudios: postulaciones.estudios,
+        referencias: postulaciones.referencias,
+        score_cuestionario: postulaciones.score_cuestionario,
+        drive_cv_id: postulaciones.drive_cv_id,
+        drive_audio_id: postulaciones.drive_audio_id,
+        expectativas_renta: postulaciones.expectativas_renta,
+        fecha_postulacion: postulaciones.fecha_postulacion,
+        candidato_nombre: candidatos.nombre,
+        candidato_email: candidatos.email,
+        candidato_telefono: candidatos.telefono,
+      })
+      .from(postulaciones)
+      .leftJoin(candidatos, eq(candidatos.id, postulaciones.candidato_id))
+      .where(eq(postulaciones.id, postId))
+      .limit(1);
     const postulacion = postulacionesRows.length > 0 ? postulacionesRows[0] : null;
 
     // Fetch notes ordered by creation time
