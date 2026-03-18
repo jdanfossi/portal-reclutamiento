@@ -121,8 +121,8 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
 
     await db.update(postulaciones).set({ estado_postulacion: estado }).where(eq(postulaciones.id, postId));
 
-    // Email Automations
-    if (profileRows.length > 0 && profileRows[0].estado_actual !== estado && enviarEmail) {
+    // Email Automations — send whenever admin explicitly requests it (enviarEmail=true)
+    if (profileRows.length > 0 && enviarEmail) {
       const profile = profileRows[0];
       const nombre = profile.candidato_nombre.split(" ")[0]; // First name roughly
       const email = profile.candidato_email;
