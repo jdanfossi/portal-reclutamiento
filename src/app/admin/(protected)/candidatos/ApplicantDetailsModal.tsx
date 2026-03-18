@@ -161,7 +161,7 @@ export default function ApplicantDetailsModal({
                   </p>
                   
                   {["descartado", "entrevista", "oferta", "contratado"].includes(pendingStatusChange) ? (
-                    <div className="bg-blue-50/50 border border-blue-100 rounded-lg p-4 mb-6">
+                    <div className="bg-blue-50/50 border border-blue-100 rounded-lg p-4 mb-6 whitespace-normal text-left">
                       <p className="text-sm font-semibold text-blue-800 mb-2">Acción Automatizada</p>
                       <p className="text-sm text-blue-800/80 mb-4 leading-relaxed">
                         {pendingStatusChange === "descartado" && "Se le enviará un correo amable agradeciendo su tiempo e informando que no avanzará en el proceso."}
@@ -177,7 +177,7 @@ export default function ApplicantDetailsModal({
                       </label>
                     </div>
                   ) : (
-                    <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 mb-6">
+                    <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 mb-6 whitespace-normal text-left">
                       <p className="text-sm text-slate-600 font-medium">Esta etapa de evaluación es interna y no genera correos automáticos al candidato.</p>
                     </div>
                   )}
