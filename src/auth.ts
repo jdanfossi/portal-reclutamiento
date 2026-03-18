@@ -39,6 +39,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
           const passwordsMatch = await bcrypt.compare(password, user.password_hash);
           if (passwordsMatch) {
+            
+            if (user.email_verified === 0) {
+              // Return null will trigger the generic CredentialsSignin error.
+              // We will rely on that for now. (The user is told to check their email upon registration).
+              throw new Error("unverified");
+            }
+
             return {
               id: user.id,
               email: user.email,

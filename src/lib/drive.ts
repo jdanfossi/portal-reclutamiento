@@ -33,6 +33,7 @@ export const createVacancyFolder = async (folderName: string): Promise<string> =
 
     const file = await drive.files.create({
       requestBody: fileMetadata,
+      supportsAllDrives: true,
       fields: 'id',
     });
 
@@ -64,6 +65,7 @@ export const uploadFileToDrive = async (
 
     const file = await drive.files.create({
       requestBody: fileMetadata,
+      supportsAllDrives: true,
       media: media,
       fields: 'id',
     });

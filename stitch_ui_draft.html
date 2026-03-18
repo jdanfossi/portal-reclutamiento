@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clínica Avaria - Crear Vacante</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Phosphor Icons -->
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="base-typography">
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              850: '#152033',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-100 h-screen w-full overflow-hidden text-slate-800">
+<!-- Main Application Wrapper -->
+<div class="flex h-full w-full">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 bg-slate-900 text-slate-300 flex flex-col shadow-xl z-20 flex-shrink-0" data-purpose="application-sidebar">
+<!-- Sidebar Header -->
+<div class="h-16 flex items-center px-6 border-b border-slate-800">
+<h1 class="text-white font-bold text-xl tracking-tight">Clínica Avaria</h1>
+</div>
+<!-- Navigation Menu -->
+<nav class="flex-1 py-6 overflow-y-auto" data-purpose="main-navigation">
+<ul class="space-y-1">
+<!-- Admin Panel Link -->
+<li>
+<a class="flex items-center gap-3 px-6 py-3 hover:bg-slate-800 hover:text-white transition-colors duration-200" href="#">
+<i class="ph ph-squares-four text-xl"></i>
+<span class="font-medium text-sm">Admin Panel</span>
+</a>
+</li>
+<!-- Vacantes Link (Active State) -->
+<li>
+<a class="flex items-center gap-3 px-6 py-3 bg-slate-800 text-white border-l-4 border-white transition-colors duration-200" href="#">
+<i class="ph ph-briefcase text-xl text-blue-400"></i>
+<span class="font-medium text-sm">Vacantes</span>
+</a>
+</li>
+<!-- Candidatos Link -->
+<li>
+<a class="flex items-center gap-3 px-6 py-3 hover:bg-slate-800 hover:text-white transition-colors duration-200" href="#">
+<i class="ph ph-users text-xl"></i>
+<span class="font-medium text-sm">Candidatos</span>
+</a>
+</li>
+<!-- Asistente IA Link -->
+<li>
+<a class="flex items-center gap-3 px-6 py-3 hover:bg-slate-800 hover:text-white transition-colors duration-200" href="#">
+<i class="ph ph-robot text-xl text-purple-400"></i>
+<span class="font-medium text-sm">Asistente IA</span>
+</a>
+</li>
+</ul>
+</nav>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: Main Content Area -->
+<main class="flex-1 flex flex-col h-full bg-gradient-to-br from-[#9eb4c9] to-[#67829a] overflow-y-auto relative" data-purpose="main-content">
+<!-- BEGIN: Header -->
+<header class="h-16 flex items-center justify-between px-8 flex-shrink-0 sticky top-0 z-10 bg-transparent" data-purpose="top-header">
+<div class="text-slate-600 font-medium text-sm flex items-center gap-2"><span class="text-xl text-slate-800">Clínica Avaria | Reclutamiento</span></div>
+<button class="bg-slate-800 hover:bg-slate-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-[#eaf2fd]">
+          Iniciar Sesión
+        </button>
+</header>
+<!-- END: Header -->
+<!-- Content Container -->
+<div class="px-8 pb-12 pt-4 w-full max-w-6xl mx-auto">
+<!-- BEGIN: Form Glass Container -->
+<!-- Using backdrop-blur and background opacity for glassmorphism effect -->
+<div class="bg-[#dce5ed]/80 backdrop-blur-md shadow-2xl rounded-2xl p-8" data-purpose="form-container">
+<!-- Form Title -->
+<div class="flex items-center gap-3 mb-8">
+<div class="p-2 bg-slate-800 text-white rounded-lg shadow-sm">
+<i class="ph ph-file-plus text-2xl"></i>
+</div>
+<h2 class="text-2xl font-bold text-slate-800 tracking-tight">Crear Nueva Vacante</h2>
+</div>
+<form action="#" method="POST">
+<!-- BEGIN: Section 1 - Información del Cargo -->
+<section class="flex flex-col md:flex-row bg-[#e6edf3] rounded-xl overflow-hidden mb-4" data-purpose="form-section-info">
+<!-- Left Column: Icon & Title -->
+<div class="md:w-1/3 bg-[#d8e3ee] p-6 flex flex-col items-center justify-center text-center"><i class="ph ph-file-text text-3xl text-slate-600 mb-2"></i>
+<h3 class="font-medium text-slate-800 leading-tight">Información<br/>del Cargo</h3></div>
+<!-- Right Column: Form Fields -->
+<div class="md:w-2/3 p-6 flex flex-col gap-5">
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-1" for="job-title">Título del Cargo</label>
+<input class="w-full rounded-md border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-slate-500 focus:ring-slate-500" id="job-title" name="job-title" type="text" value="Kinesióloga Providencia"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-1" for="job-description">Descripción</label>
+<textarea class="w-full rounded-md border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-slate-500 focus:ring-slate-500" id="job-description" name="job-description" rows="3">Descripción general del puesto, es descripción general er mventarion de prevendación.</textarea>
+</div>
+</div>
+</section>
+<!-- END: Section 1 -->
+<!-- BEGIN: Section 2 - Requisitos y Estado -->
+<section class="flex flex-col md:flex-row bg-[#e6edf3] rounded-xl overflow-hidden mb-4" data-purpose="form-section-requirements">
+<!-- Left Column: Icon & Title -->
+<div class="md:w-1/3 bg-[#d8e3ee] p-6 flex flex-col items-center justify-center text-center"><i class="ph ph-clipboard-text text-3xl text-slate-600 mb-2"></i>
+<h3 class="font-medium text-slate-800 leading-tight">Requisitos y<br/>Estado</h3></div>
+<!-- Right Column: Form Fields -->
+<div class="md:w-2/3 p-6 flex flex-col gap-5">
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-1" for="job-requirements">Requisitos</label>
+<textarea class="w-full rounded-md border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-slate-500 focus:ring-slate-500" id="job-requirements" name="job-requirements" rows="4">- 2 años de experiencia en troperosnos gráficas.
+- Trancllmiento de candidato.
+- Manuamiento de atagna y enzgar tuantisto.</textarea>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-1" for="job-status">Estado</label>
+<select class="w-full rounded-md border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-slate-500 focus:ring-slate-500" id="job-status" name="job-status">
+<option selected="">Abierta (Pública)</option>
+<option>Cerrada</option>
+<option>Borrador</option>
+</select>
+</div>
+</div>
+</section>
+<!-- END: Section 2 -->
+<!-- BEGIN: Section 3 - Evaluación del Candidato -->
+<section class="flex flex-col md:flex-row bg-[#e6edf3] rounded-xl overflow-hidden mb-6" data-purpose="form-section-evaluation">
+<!-- Left Column: Icon & Title -->
+<div class="md:w-1/3 bg-[#d8e3ee] p-6 flex flex-col items-center justify-center text-center"><i class="ph ph-user-list text-3xl text-slate-600 mb-2"></i>
+<h3 class="font-medium text-slate-800 leading-tight">Evaluación del<br/>Candidato</h3></div>
+<!-- Right Column: Form Fields -->
+<div class="md:w-2/3 p-6 flex flex-col gap-5">
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-1" for="eval-instructions">Instrucciones de Audición Libre (Opcional)</label>
+<input class="w-full rounded-md border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-slate-500 focus:ring-slate-500 placeholder-slate-400" id="eval-instructions" name="eval-instructions" placeholder="Ej: Preséntate brevemente, conocirosiones, instruccorox. (Opcional)" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-2">Preguntas de Filtro Especificas</label>
+<button class="inline-flex items-center gap-2 px-4 py-2 border border-slate-300 rounded-md shadow-sm text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors" type="button">
+<i class="ph ph-plus text-slate-500"></i>
+                    Agregar Pregunta
+                  </button>
+</div>
+</div>
+</section>
+<!-- END: Section 3 -->
+<!-- BEGIN: Form Actions -->
+<div class="flex items-center justify-end gap-4 pt-4" data-purpose="form-actions">
+<button class="px-6 py-2.5 bg-slate-200 text-slate-700 rounded-lg text-sm font-semibold hover:bg-slate-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2" type="button">
+                Cancelar
+              </button>
+<button class="px-6 py-2.5 bg-slate-800 text-white rounded-lg text-sm font-semibold hover:bg-slate-700 shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2" type="submit">
+                Publicar Vacante
+              </button>
+</div>
+<!-- END: Form Actions -->
+</form>
+</div>
+<!-- END: Form Glass Container -->
+</div>
+</main>
+<!-- END: Main Content Area -->
+</div>
+</body></html>
