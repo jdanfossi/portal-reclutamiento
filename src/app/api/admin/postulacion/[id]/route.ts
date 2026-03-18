@@ -181,12 +181,15 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
       }
 
       if (subject && htmlContent) {
-        // Send email seamlessly async (do not await throwing error back to client ideally, just log if fails)
-        sendEmail({
-          to: [{ email, name: profile.candidato_nombre }],
-          subject,
-          htmlContent
-        }).catch(err => console.error("Error sending status email:", err));
+        try {
+          await sendEmail({
+            to: [{ email, name: profile.candidato_nombre }],
+            subject,
+            htmlContent
+          });
+        } catch (err) {
+          console.error("Error sending status email:", err);
+        }
       }
     }
 
